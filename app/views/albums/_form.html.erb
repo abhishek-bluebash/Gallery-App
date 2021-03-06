@@ -1,0 +1,48 @@
+<%= form_with(model: album) do |form| %>
+  <% if album.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(album.errors.count, "error") %> prohibited this album from being saved:</h2>
+
+      <ul>
+        <% album.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul></p>
+    </div>
+  <% end %>
+
+  <div class="field my-3 mx-3">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field my-3 mx-3">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field my-3 mx-3">
+    <%= form.label :published %>
+    <%= form.check_box :published %>
+  </div>
+
+   <div class="field my-3 mx-3">
+    <%= form.label :images %>
+    <%= form.file_field :images, :multiple => true %>
+  </div>
+
+
+<div class="field form-group my-3 mx-3">
+  <%= form.number_field :user_id, id: :albums_user_id, class:"form-control",value:current_user.id, type: :hidden %>
+</div>
+
+
+ <div class="field form-group my-3 mx-3">
+    <%= form.text_field :all_tags, placeholder: "Tags separated with comma" %>
+ </div>
+
+  <div class="actionsmy-3 mx-3">
+    <%= form.submit %>
+    
+  </div>
+<% end %>

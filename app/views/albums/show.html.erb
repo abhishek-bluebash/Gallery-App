@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @album.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @album.description %>
+</p>
+
+<p>
+  <strong>Published:</strong>
+  <%= @album.published %>
+</p>
+<div class= "row">
+  <% @album.images.each do |image| %>
+  <div class= "col-sm-4 py-5 mx-4">
+  <%= image_tag(image, style:"width:50%" ) %>
+  <% if user_signed_in? %>
+  <%= link_to 'Remove', delete_image_attachment_album_url(image.signed_id),class: "btn btn-info",
+         method: :delete,
+         data: { confirm: 'Are you sure?' } %>
+  <% end %>
+</div>
+  <% end %>
+</div>
+<br><br>
+<%= link_to 'Back', albums_path,class: "btn btn-dark" %>

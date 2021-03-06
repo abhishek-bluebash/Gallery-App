@@ -1,0 +1,18 @@
+<h1>Editing Album</h1>
+
+<%= render 'form', album: @album %>
+
+<div class= "row">
+ <% @album.images.each do |image| %>
+ <div class= "col-sm-4 py-5 mx-3">
+ <%= image_tag(image, style:"width:50%" ) %>
+ <% if user_signed_in? %>
+ <%= link_to 'Remove', delete_image_attachment_album_url(image.signed_id),class: "btn btn-info",
+     method: :delete,
+     data: { confirm: 'Are you sure?' } %>
+  <% end %>
+</div>
+ <% end %>
+</div>
+<br><br>
+<%= link_to 'Back', albums_path, class: "btn btn-dark" %>
