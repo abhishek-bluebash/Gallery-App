@@ -15,7 +15,7 @@
  */
 body{
 
-    background-image: url('banda.jpg');
+    background-image: url('https://raw.githubusercontent.com/Sharma02098/Gallery-App/main/app/assets/images/banda.jpg');
     background-position: fit;  
     background-size: cover;
     overflow-x: hidden;
