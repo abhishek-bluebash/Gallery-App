@@ -62,6 +62,6 @@ config.action_mailer.smtp_settings = {
   domain:               'localhost:3000',
   user_name:            'abhishekempire298@gmail.com',
   password:             'Bluebash298~',
-  authentication:       :plain,
+  authentication:       'plain',
   enable_starttls_auto: true }
 end
