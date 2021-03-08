@@ -10,6 +10,7 @@
   <div class="field my-3">
     <%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "current-password" %>
+    <%# <%= link_to "Forget your Password", password_reset_path%> 
   </div>
 
   <% if devise_mapping.rememberable? %>
