@@ -99,17 +99,17 @@ Rails.application.configure do
 
 
   
-  config.action_mailer.default_url_options = { :host => 'railsalbum.herokuapp.com' }
+#   config.action_mailer.default_url_options = { :host => 'railsalbum.herokuapp.com' }
 
 
-config.action_mailer.smtp_settings = {
-  address:              'smtp.gmail.com',
-  port:                 587,
-  domain:               'railsalbum.herokuapp.com',
-  user_name:            'abhishekempire298@gmail.com',
-  password:             'Bluebash298~',
-  authentication:       :plain,
-  enable_starttls_auto: true }
+# config.action_mailer.smtp_settings = {
+#   address:              'smtp.gmail.com',
+#   port:                 587,
+#   domain:               'railsalbum.herokuapp.com',
+#   user_name:            'abhishekempire298@gmail.com',
+#   password:             'Bluebash298~',
+#   authentication:       :plain,
+#   enable_starttls_auto: true }
   # Inserts middleware to perform automatic connection switching.
   # The `database_selector` hash is used to pass options to the DatabaseSelector
   # middleware. The `delay` is used to determine how long to wait after a write
