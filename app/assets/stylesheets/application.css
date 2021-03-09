@@ -1,14 +1,13 @@
-/*
-
- */
 body{
-
-    background-image: url('https://raw.githubusercontent.com/Sharma02098/Gallery-App/main/app/assets/images/banda.jpg');
-    background-position: fit;  
-    background-size: cover;
+     background-image: url('https://www.wallpapertip.com/wmimgs/149-1491561_sky-blue-hd-background-image-for-banner-light.jpg');
+     max-height: 100%;
+     max-width: 100%; 
+     background-position: fixed;   
+     background-size: cover;
+    background-repeat: no-repeat;
     overflow-x: hidden;
-    background-color: rgba(255, 255, 255, 0.2);
-    box-shadow: rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 0 0 100% rgba(0,0,0, 0.4); 
+
 }
 
 

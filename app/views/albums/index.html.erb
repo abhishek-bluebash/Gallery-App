@@ -1,26 +1,27 @@
 <% if user_signed_in? %>
 <div class="container-fluid">
-<div class="d-flex justify-content-center pb-3 pt-5">
-  <%= link_to 'CREATE NEW ALBUM', new_album_path, class:"btn btn-secondary" %>
+    <div class="d-flex justify-content-center pb-3 pt-5">
+      <%= link_to 'CREATE NEW ALBUM', new_album_path, class:"btn btn-secondary" %>
+    </div>
 </div>
 <% end %>
 
-<div class="my-5 d-flex justify-content-center">
+<div class="my-5 d-flex justify-content-center ">
  <%= search_form_for @q do |f| %> 
   <%= f.search_field :tags_name_cont, placeholder: "Search Tags"%>
-    <%end %>
+ <%end %>
 </div>
 
-<div class="row">
-<% @albums.each do |album| %>
+<div class="row mw-100 container">
+  <% @albums.each do |album| %>
 		 <% if user_signed_in? %>
      <% if album.user == current_user %>
-		 <div class="col-sm-2">
-		 <div class="card my-4" style="width: 18rem;">
+		 <div class="col-sm-12 col-md-6 col-lg-4">
+		 <div class="card my-4" style="width: 20rem;">
      <div class="card">
      <div class="card-body text-capitalize">
      <h5 class="card-title text-uppercase"><%= album.title %></h5>
-     <p class="card-text"><%= album.description %></p> 
+     <p class="card-text"><%= album.description%></p> 
      
      <%= image_tag("https://source.unsplash.com/1600x900/?#{album.title}",:size=>"230x130")%>  
      <%= link_to 'Show', album,class:"btn btn-success my-2" %>
@@ -34,9 +35,8 @@
        <%end%>
       <% else %>
 <%if album.published? %>
-  <div class="col-sm-2">
-			<div class="card my-4" style="width: 18rem;">
-      <img src="" class="card-img-top" alt="">
+  <div class="col-sm-12 col-md-6 col-lg-4">
+			<div class="card my-4" style="width: 20rem;">
       <div class="card-body text-capitalize">
       <h5 class="card-title text-uppercase"><%= album.title %></h5>
       <p class="card-text"><%= album.description %></p> 
@@ -55,7 +55,7 @@
   </div>
 	</div>
 	
-</div>
+
  
 
 

@@ -2,8 +2,10 @@ class AlbumsController < ApplicationController
   before_action :set_album, only: %i[ show edit update destroy ]
  
   def index
+   
     @q=Album.ransack(params[:q])
     @albums=@q.result.includes(:tags, :taggings)
+
   end
 
     def show
@@ -12,6 +14,7 @@ class AlbumsController < ApplicationController
   def new
     @album = current_user.albums.build
   end
+
 
   def edit
   end
